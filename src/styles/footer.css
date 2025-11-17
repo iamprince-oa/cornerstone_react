@@ -1,5 +1,22 @@
+/* =================================================
+   FOOTER – Cornerstone
+   Brand colors applied
+================================================= */
+
+/* --------------------------------------------------
+   COLOR VARIABLES (keep consistent with other files)
+-------------------------------------------------- */
+:root {
+  --color-primary: #0a1f3d; /* Deep Navy Blue */
+  --color-accent: #d4b86a; /* Gold/Tan */
+  --color-white: #ffffff;
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
 .footer {
-  background-color: #0d1b2a;
+  background-color: var(--color-primary);
   color: #bbb;
   margin-top: 4rem;
   padding: 1.5rem 0;
@@ -14,10 +31,12 @@
 }
 
 .footer strong {
-  color: #d4a017;
+  color: var(--color-accent);
 }
 
-/* Responsive */
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
 @media (max-width: 768px) {
   .footer {
     padding: 1.2rem 0;

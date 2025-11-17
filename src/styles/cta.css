@@ -1,0 +1,165 @@
+/* --------------------------------------------------
+   CALL‑TO‑ACTION
+-------------------------------------------------- */
+.cta-card {
+  text-align: center;
+  background: var(--color-white);
+  padding: 28px;
+  border-radius: 8px;
+  margin-top: 45px;
+  border-left: 5px solid var(--color-primary);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+.cta-card p {
+  margin: 16px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
+   SOCIAL BUTTONS
+-------------------------------------------------- */
+.social-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Individual colors – keep platform defaults, only change email to brand */
+.social-btn.whatsapp {
+  background: #25d366;
+}
+.social-btn.email {
+  background: var(--color-primary);
+}
+.social-btn.instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.social-btn.facebook {
+  background: #1877f2;
+}
+
+/* =================================================
+   DARK MODE
+   Activates when body gets class=".dark-mode"
+================================================= */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .logo-bar {
+  background: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.04);
+}
+
+body.dark-mode .hero-clean {
+  background: #1e1e1e;
+}
+
+body.dark-mode .hero-clean h1 {
+  color: var(--color-accent);
+}
+
+body.dark-mode .home-content {
+  color: #e0e0e0;
+}
+
+body.dark-mode .info-card {
+  background: #1a1a1a;
+  border-left-color: var(--color-accent);
+  box-shadow: 0 3px 12px rgba(255, 255, 255, 0.04);
+}
+
+body.dark-mode .info-card p {
+  color: #bbbbbb;
+}
+
+body.dark-mode .loading {
+  color: var(--color-accent);
+}
+
+/* CTA in dark mode */
+body.dark-mode .cta-card {
+  background: #1a1a1a;
+  border-left-color: var(--color-accent);
+  box-shadow: 0 3px 12px rgba(255, 255, 255, 0.04);
+}
+
+body.dark-mode .cta-card p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .cta-btn {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+body.dark-mode .cta-btn:hover {
+  background: #e6c97a; /* slightly lighter gold for hover */
+}
+
+/* Social buttons – dark mode */
+body.dark-mode .social-btn.whatsapp {
+  background: #1ebe57;
+}
+body.dark-mode .social-btn.email {
+  background: var(--color-primary);
+}
+body.dark-mode .social-btn.instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+body.dark-mode .social-btn.facebook {
+  background: #3b5998;
+}

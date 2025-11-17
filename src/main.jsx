@@ -7,6 +7,7 @@ import "./styles/services.css";
 import "./styles/contact.css";
 import "./styles/thankyou.css";
 import "./styles/footer.css";
+import "./styles/cta.css";
 import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(

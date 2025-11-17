@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.jpeg";
 import Footer from "../components/Footer";
 import "../styles/home.css";
+import "../styles/loading.css";
+import CTA from "../components/cta";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -16,20 +18,30 @@ function Home() {
       .catch((err) => console.error("Fetch error:", err));
   }, []);
 
-  if (!data) return <p className="loading">Loading...</p>;
+  if (!data)
+    return (
+      <div className="loading-wrapper">
+        <div className="spinner"></div>
+        <p className="loading-text">Loading...</p>
+      </div>
+    );
 
   return (
     <>
       <title>{data.title}</title>
 
       {/* Logo & Hero */}
-      <section className="logo-bar">
-        <img src={logo} alt="Cornerstone Logo" className="logo-small" />
+      <header className="header-hero">
+        {/* LOGO BAR */}
+        <div className="logo-bar">
+          <img src={logo} alt="Cornerstone Logo" className="logo-small" />
+        </div>
 
+        {/* HERO SECTION */}
         <section className="hero-clean">
           <h1>{data.welcome}</h1>
         </section>
-      </section>
+      </header>
 
       {/* Main Content */}
       <main className="home-content">
@@ -43,55 +55,7 @@ function Home() {
           <p>{data.mission}</p>
         </section>
 
-        {/* CTA Section */}
-        <section className="info-card cta-card">
-          <h2>Get in Touch</h2>
-          <p>
-            Have a project in mind or want to reach out for a consultation? We’d
-            love to hear from you.
-          </p>
-          <a href="/contact" className="cta-btn">
-            Contact Us
-          </a>
-
-          {/* Social Buttons */}
-          <div className="social-buttons">
-            <a
-              href="https://wa.me/233XXXXXXXXX"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-btn whatsapp"
-              title="WhatsApp"
-            >
-              <i className="fab fa-whatsapp"></i>
-            </a>
-            <a
-              href="mailto:cornerstonedevelopmentcon@gmail.com"
-              className="social-btn email"
-              title="Email"
-            >
-              <i className="fas fa-envelope"></i>
-            </a>
-            <a
-              href="https://instagram.com/yourpage"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-btn instagram"
-              title="Instagram"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a
-              href="https://facebook.com/yourpage"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-btn facebook"
-              title="Facebook"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </a>
-          </div>
-        </section>
+        <CTA />
       </main>
 
       <Footer />

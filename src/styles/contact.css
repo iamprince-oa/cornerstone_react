@@ -1,3 +1,12 @@
+:root {
+  --color-primary: #0a1f3d; /* Deep Navy Blue */
+  --color-accent: #d4b86a; /* Gold/Tan */
+  --color-white: #ffffff;
+}
+
+/* 
+   PAGE
+ */
 .contact-page {
   min-height: 80vh;
   padding: 40px 20px;
@@ -12,10 +21,13 @@ body.dark-mode .contact-page {
   color: #e0e0e0;
 }
 
+/* --------------------------------------------------
+   CONTAINER
+-------------------------------------------------- */
 .contact-container {
   max-width: 540px;
   margin: 0 auto;
-  background: #ffffff;
+  background: var(--color-white);
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -27,16 +39,19 @@ body.dark-mode .contact-container {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* --------------------------------------------------
+   TITLE & SUBTITLE
+-------------------------------------------------- */
 .contact-title {
   font-size: 2rem;
-  color: #1b5e20;
+  color: var(--color-primary);
   margin-bottom: 8px;
   text-align: center;
   font-weight: 600;
 }
 
 body.dark-mode .contact-title {
-  color: #81c784;
+  color: var(--color-accent);
 }
 
 .contact-subtitle {
@@ -50,6 +65,9 @@ body.dark-mode .contact-subtitle {
   color: #aaa;
 }
 
+/* --------------------------------------------------
+   FORM
+-------------------------------------------------- */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -64,12 +82,12 @@ body.dark-mode .contact-subtitle {
 .form-group label {
   margin-bottom: 6px;
   font-weight: 500;
-  color: #1b5e20;
+  color: var(--color-primary);
   font-size: 0.95rem;
 }
 
 body.dark-mode .form-group label {
-  color: #81c784;
+  color: var(--color-accent);
 }
 
 .form-group input,
@@ -93,14 +111,14 @@ body.dark-mode .form-group textarea {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #1b5e20;
-  box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(10, 31, 61, 0.15);
 }
 
 body.dark-mode .form-group input:focus,
 body.dark-mode .form-group textarea:focus {
-  border-color: #81c784;
-  box-shadow: 0 0 0 3px rgba(129, 199, 132, 0.2);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(212, 184, 106, 0.2);
 }
 
 .form-group input::placeholder,
@@ -113,9 +131,12 @@ body.dark-mode .form-group textarea::placeholder {
   color: #777;
 }
 
+/* --------------------------------------------------
+   SUBMIT BUTTON
+-------------------------------------------------- */
 .submit-btn {
-  background: #1b5e20;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-white);
   padding: 14px 20px;
   border: none;
   border-radius: 8px;
@@ -127,16 +148,21 @@ body.dark-mode .form-group textarea::placeholder {
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: #2e7d32;
+  background: var(--color-accent);
+  color: var(--color-primary);
   transform: translateY(-1px);
 }
 
 .submit-btn:disabled {
-  background: #a5d6a7;
+  background: #a0a0a0;
   cursor: not-allowed;
   transform: none;
+  opacity: 0.7;
 }
 
+/* --------------------------------------------------
+   RESPONSE MESSAGES
+-------------------------------------------------- */
 .response-msg {
   margin-top: 20px;
   padding: 12px 16px;
@@ -147,15 +173,15 @@ body.dark-mode .form-group textarea::placeholder {
 }
 
 .response-msg.success {
-  background: #e8f5e9;
-  color: #1b5e20;
-  border: 1px solid #81c784;
+  background: #f5f0e6;
+  color: var(--color-primary);
+  border: 1px solid var(--color-accent);
 }
 
 body.dark-mode .response-msg.success {
-  background: #1e3a1e;
-  color: #81c784;
-  border-color: #81c784;
+  background: #2d2410;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .response-msg.error {
@@ -181,6 +207,9 @@ body.dark-mode .response-msg.error {
   }
 }
 
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
 @media (max-width: 768px) {
   .contact-page {
     padding: 30px 16px;

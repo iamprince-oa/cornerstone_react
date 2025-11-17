@@ -1,0 +1,50 @@
+:root {
+  --color-primary: #0a1f3d; /* Deep Navy Blue */
+  --color-accent: #d4b86a; /* Gold/Tan */
+  --color-white: #ffffff;
+}
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  color: var(--color-primary);
+}
+
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #f0e6d2; /* Soft gold-tinted light */
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 15px;
+}
+
+.loading-text {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+  color: var(--color-primary);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body.dark-mode .loading-wrapper {
+  color: var(--color-accent);
+}
+
+body.dark-mode .spinner {
+  border-color: #3a3529; /* Dark gold-tinted */
+  border-top-color: var(--color-accent);
+}
+
+body.dark-mode .loading-text {
+  color: var(--color-accent);
+}

@@ -90,7 +90,10 @@ function Navbar() {
         {/* Mobile Burger */}
         <button
           className={`burger ${isOpen ? "open" : ""}`}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            document.body.classList.toggle("mobile-menu-open", !isOpen);
+          }}
           aria-label="Toggle menu"
         >
           <span></span>
