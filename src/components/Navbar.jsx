@@ -83,7 +83,11 @@ function Navbar() {
             className="dark-toggle"
             aria-label="Toggle dark mode"
           >
-            {isDark ? "Sun" : "Moon"}
+            {isDark ? (
+              <i className="fas fa-sun"></i>
+            ) : (
+              <i className="fas fa-moon"></i>
+            )}
           </button>
         </div>
 
@@ -127,7 +131,11 @@ function Navbar() {
           </li>
           <li>
             <button onClick={toggleDarkMode} className="mobile-dark-toggle">
-              {isDark ? "Light Mode" : "Dark Mode"}
+              {isDark ? (
+                <i className="fas fa-sun"></i>
+              ) : (
+                <i className="fas fa-moon"></i>
+              )}
             </button>
           </li>
         </ul>

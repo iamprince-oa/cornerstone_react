@@ -6,7 +6,7 @@ import Services from "./pages/services.jsx";
 import Contact from "./pages/contact.jsx";
 import Navbar from "./components/Navbar.jsx";
 import ThankYou from "./pages/thank_you.jsx";
-import CTA from "./components/cta.jsx";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   return (

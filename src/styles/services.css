@@ -17,11 +17,26 @@
    PAGE CONTAINER
 -------------------------------------------------- */
 .services-page {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 50px 32px;
   font-family: "Inter", system-ui, sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+
+  background: var(--color-white);
+
+  /* Stronger border and definition */
+  border: 1px solid rgba(10, 31, 61, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), 0 0 6px rgba(10, 31, 61, 0.08);
+
+  transition: box-shadow 0.25s ease, border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Hover gives a slight lift and glow */
+.services-page:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 0 10px rgba(212, 184, 106, 0.2);
+  border-color: var(--color-primary);
 }
 
 /* --------------------------------------------------
@@ -33,6 +48,14 @@
   color: var(--color-primary);
   margin-bottom: 40px;
   transition: color 0.3s ease;
+  border-bottom: 2px solid var(--color-primary);
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.services-title:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 
 /* --------------------------------------------------
@@ -49,17 +72,21 @@
 -------------------------------------------------- */
 .service-card {
   background: var(--color-white);
-  border-left: 5px solid var(--color-primary);
-  border-radius: 10px;
-  padding: 18px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease,
-    border-left-color 0.3s ease;
+  border: 1px solid rgba(10, 31, 61, 0.12);
+  border-left: 6px solid var(--color-primary);
+  border-radius: 14px;
+  padding: 24px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, background 0.25s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  border-left-color: var(--color-accent);
+  background: #f9f9fb;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 0 8px rgba(212, 184, 106, 0.2);
 }
 
 /* --------------------------------------------------
@@ -118,6 +145,26 @@
   }
 }
 
+@media (max-width: 992px) {
+  .services-page {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-page {
+    margin: 40px 16px;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page {
+    margin: 30px 12px;
+    padding: 20px 12px;
+  }
+}
+
 /* --------------------------------------------------
    CAROUSEL DOTS
 -------------------------------------------------- */
@@ -144,37 +191,63 @@
 }
 
 /* ===============================
-   DARK MODE
+   DARK MODE - STRONGER DEFINITION
 =============================== */
-body.dark-mode .services-page {
-  background: #121212;
-  color: #e0e0e0;
+body.dark-mode {
+  background: #0d0d0d;
 }
 
+/* Page container has definition and depth */
+body.dark-mode .services-page {
+  background: #141414;
+  color: #e4e4e4;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.9), 0 0 14px rgba(212, 184, 106, 0.15);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Slight golden tone on hover */
+body.dark-mode .services-page:hover {
+  box-shadow: 0 0 34px rgba(212, 184, 106, 0.25);
+}
+
+/* Title definition */
 body.dark-mode .services-title {
   color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 
+/* Cards have more structure */
 body.dark-mode .service-card {
-  background: #1e1e1e;
+  background: #1b1b1b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left-color: var(--color-accent);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
+/* Hover glow effect */
+body.dark-mode .service-card:hover {
+  transform: translateY(-4px);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 0 18px rgba(212, 184, 106, 0.35), 0 6px 20px rgba(0, 0, 0, 0.8);
+  background: #222;
+}
+
+/* Text colors stay readable */
 body.dark-mode .service-name {
   color: var(--color-accent);
 }
 
 body.dark-mode .service-text {
-  color: #bbbbbb;
+  color: #d3d3d3;
 }
 
-body.dark-mode .services-loading {
-  color: var(--color-accent);
-}
-
+/* Carousel dots */
 body.dark-mode .dot {
-  background: #555;
+  background: #777;
 }
 
 body.dark-mode .dot.active {

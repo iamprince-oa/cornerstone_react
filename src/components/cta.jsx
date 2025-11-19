@@ -18,13 +18,20 @@ function CTA() {
         {/* Social Buttons */}
         <div className="social-buttons">
           <a
-            href="https://wa.me/233XXXXXXXXX"
+            href="https://wa.me/233208973177"
             target="_blank"
             rel="noopener noreferrer"
             className="social-btn whatsapp"
             title="WhatsApp"
           >
             <i className="fab fa-whatsapp"></i>
+          </a>
+          <a
+            href="tel:+233208660381"
+            className="social-btn phone"
+            title="Call Us"
+          >
+            <i className="fas fa-phone"></i>
           </a>
           <a
             href="mailto:cornerstonedevelopmentcon@gmail.com"

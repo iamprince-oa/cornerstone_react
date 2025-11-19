@@ -83,6 +83,10 @@
   background: #1877f2;
 }
 
+.social-btn.phone {
+  background: #1ebe57;
+}
+
 /* =================================================
    DARK MODE
    Activates when body gets class=".dark-mode"
@@ -162,4 +166,8 @@ body.dark-mode .social-btn.instagram {
 }
 body.dark-mode .social-btn.facebook {
   background: #3b5998;
+}
+
+body.dark-mode .social-btn.phone {
+  background: #1ebe57;
 }

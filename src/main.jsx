@@ -8,7 +8,10 @@ import "./styles/contact.css";
 import "./styles/thankyou.css";
 import "./styles/footer.css";
 import "./styles/cta.css";
+import "./styles/variables.css";
+import "./components/ServicesCarousel.jsx";
 import App from "./App.jsx";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import logo from "../assets/logo.jpeg";
-import Footer from "../components/Footer";
 import "../styles/home.css";
 import "../styles/loading.css";
-import CTA from "../components/cta";
+import { Helmet } from "react-helmet";
+
+const Footer = lazy(() => import("../components/Footer"));
+const CTA = lazy(() => import("../components/cta"));
 
 function Home() {
   const [data, setData] = useState(null);
@@ -20,45 +22,90 @@ function Home() {
 
   if (!data)
     return (
-      <div className="loading-wrapper">
-        <div className="spinner"></div>
+      <div className="loading-wrapper" role="status" aria-live="polite">
+        <div className="spinner" aria-hidden="true"></div>
         <p className="loading-text">Loading...</p>
       </div>
     );
 
   return (
     <>
-      <title>{data.title}</title>
+      {/* SEO and Social Meta */}
+      <Helmet>
+        <title>{data.title}</title>
+        <meta
+          name="description"
+          content={data.description || "Cornerstone Development & Construction"}
+        />
+        <meta
+          name="keywords"
+          content="Construction, Real Estate, Land, Buildings, Apartments"
+        />
+        <meta name="author" content="Cornerstone Development" />
+        <link rel="canonical" href="https://cornerstone.com/" />
 
-      {/* Logo & Hero */}
+        {/* Open Graph / Social */}
+        <meta property="og:title" content={data.title} />
+        <meta
+          property="og:description"
+          content={data.description || data.welcome}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={data.ogImage || "/default-og.jpg"} />
+        <meta property="og:url" content="https://cornerstone.com/" />
+
+        {/* Structured Data JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Cornerstone Development",
+            url: "https://cornerstone.com/",
+            logo: "https://cornerstone.com/logo.jpeg",
+            sameAs: [
+              "https://www.facebook.com/cornerstone",
+              "https://www.twitter.com/cornerstone",
+            ],
+          })}
+        </script>
+      </Helmet>
+
+      {/* Header / Hero */}
       <header className="header-hero">
-        {/* LOGO BAR */}
         <div className="logo-bar">
-          <img src={logo} alt="Cornerstone Logo" className="logo-small" />
+          <img
+            src={logo}
+            alt="Cornerstone Development Logo"
+            className="logo-small"
+            loading="lazy"
+          />
         </div>
-
-        {/* HERO SECTION */}
         <section className="hero-clean">
           <h1>{data.welcome}</h1>
+          {data.heroSubtitle && <p>{data.heroSubtitle}</p>}
         </section>
       </header>
 
       {/* Main Content */}
       <main className="home-content">
-        <section className="info-card">
-          <h2>Our Vision</h2>
+        <section className="info-card" aria-labelledby="vision-title">
+          <h2 id="vision-title">Our Vision</h2>
           <p>{data.vision}</p>
         </section>
 
-        <section className="info-card">
-          <h2>Our Mission</h2>
+        <section className="info-card" aria-labelledby="mission-title">
+          <h2 id="mission-title">Our Mission</h2>
           <p>{data.mission}</p>
         </section>
 
-        <CTA />
+        <Suspense fallback={<div>Loading call-to-action...</div>}>
+          <CTA />
+        </Suspense>
       </main>
 
-      <Footer />
+      <Suspense fallback={<div>Loading footer...</div>}>
+        <Footer />
+      </Suspense>
     </>
   );
 }

@@ -30,21 +30,14 @@ function Services() {
   // Multiple images for each service
   const imageSets = {
     "Selling of lands": [Images.land4, Images.land5, Images.land6],
-    "Selling of homes": [
-      "/images/building1.jpg",
-      "/images/building2.jpg",
-      "/images/building3.jpg",
-    ],
-    "Renting of apartments": [
-      "/images/apartment1.jpg",
-      "/images/apartment2.jpg",
-      "/images/apartment3.jpg",
-    ],
+    "Selling of homes": [Images.sale1, Images.sale2],
+    "Renting of apartments, homes and offices": [Images.rent1, Images.rent2],
     Construction: [Images.construc1, Images.land9, Images.land10],
   };
 
   return (
     <>
+      <title>Services</title>
       <div className="services-page">
         <h1 className="services-title">Our Services</h1>
 
