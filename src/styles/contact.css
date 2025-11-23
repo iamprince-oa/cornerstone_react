@@ -98,6 +98,7 @@ body.dark-mode .form-group label {
   font-size: 1rem;
   background: #fff;
   color: #333;
+  resize: vertical;
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -230,6 +231,7 @@ body.dark-mode .response-msg.error {
   .form-group input,
   .form-group textarea {
     padding: 11px 13px;
+    resize: vertical;
   }
 
   .submit-btn {

@@ -30,7 +30,7 @@ function ThankYou() {
         </span>
       </p>
       <p className="detail">
-        <b>Body:</b> {submission.message}
+        <b>Message : </b> {submission.message}
       </p>
       <button className="back-link" onClick={() => navigate("/")}>
         Return Home
