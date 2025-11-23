@@ -12,9 +12,11 @@ import "./styles/variables.css";
 import "./components/ServicesCarousel.jsx";
 import App from "./App.jsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
+    <SpeedInsights />
   </StrictMode>
 );
