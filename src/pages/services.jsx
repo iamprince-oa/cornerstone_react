@@ -11,7 +11,7 @@ function Services() {
 
   useEffect(() => {
     fetch(
-      "http://127.0.0.1:8000/api/services/",
+      // "http://127.0.0.1:8000/api/services/",
       "https://cornerstone-djangorestframework.onrender.com/api/services/"
     )
       .then((res) => {

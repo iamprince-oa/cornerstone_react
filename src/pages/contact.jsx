@@ -34,7 +34,7 @@ function Contact() {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8000/api/contact/",
+        //"http://127.0.0.1:8000/api/contact/",
         "https://cornerstone-djangorestframework.onrender.com/api/contact/",
         {
           method: "POST",
