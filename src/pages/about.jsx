@@ -7,7 +7,10 @@ function About() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/about/")
+    fetch(
+      "http://127.0.0.1:8000/api/about/",
+      "https://cornerstone-djangorestframework.onrender.com/api/about/"
+    )
       .then((res) => {
         if (!res.ok) throw new Error("Network error");
         return res.json();

@@ -11,7 +11,10 @@ function Home() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/")
+    fetch(
+      "http://127.0.0.1:8000/",
+      "https://cornerstone-djangorestframework.onrender.com/"
+    )
       .then((res) => {
         if (!res.ok) throw new Error("Network response was not ok");
         return res.json();
